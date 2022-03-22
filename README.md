@@ -29,11 +29,13 @@
 Gin安装：go get -u http://github.com/gin-gonic/gin
 
 直接在Goland下面的Terminal中输入就可以了。看到下图就表示你安装成功了
+![image](https://user-images.githubusercontent.com/101968429/159395764-6a91459a-6a9b-4a44-b7d0-53fb0378df4f.png)
 
 
 二、先写一个小案例，并在Postman或者浏览器中打开看下效果。
 
 在GinDemo下面创建一个main.go文件，输入以下内容：
+![image](https://user-images.githubusercontent.com/101968429/159395782-c3ee62b5-8add-4ee0-a84b-e8c07a1013cb.png)
 
 
 然后在下面的Termonal中输入以下指令运行该项目：
@@ -41,9 +43,11 @@ Gin安装：go get -u http://github.com/gin-gonic/gin
 Go run main.go
 
 看到下图即表示你已经运行起来了。
+![image](https://user-images.githubusercontent.com/101968429/159395792-6da0659a-05bd-4ab7-b7dd-0446c4e07a85.png)
 
 
 这个时候，打开你的浏览器，输入：localhost:8080/ping,将显示以下内容：
+![image](https://user-images.githubusercontent.com/101968429/159395815-f3b73898-7598-40aa-8c25-4275af3d5eee.png)
 
 
 整个Demo中的注释还是比较清楚的，每一行代码是什么意思，有什么作用等都比较简单，运行到这里基本上Gin的精髓就已经学到了。
@@ -53,14 +57,17 @@ Go run main.go
 三、加载静态资源
 
 在实际项目中我们经常会用到很多静态资源，比如：图片、文件等。那Gin是怎么处理的呢？还是看案例，下面我们对上面的main.go进行一下简单修改：
+![image](https://user-images.githubusercontent.com/101968429/159395861-8b9d61b7-16d0-40b3-a9d4-7986fafaa0ef.png)
 
 
 主要加了两行代码，用到两个函数。注释中已经描述的很清楚了，说一下代码中未描述的内容，非常重要，这两个函数的第一个参数就是相对地址，也就是说是用户端访问的时候访问的地址，第二个参数是本地服务器的地址，也就是引用的地址。
 
 比如我们运行上面项目后，若想访问/Users/fu/GolandProjects/GinDemo/web/static里面的图片，那么直接如下操作即可：
+![image](https://user-images.githubusercontent.com/101968429/159395888-5503501e-ef89-4c5f-86fc-ac6a55055603.png)
 
 
 若想加载第二种加载形式的，则直接这么访问：
+![image](https://user-images.githubusercontent.com/101968429/159395915-88c4840c-177e-4271-bfe8-d1d0b890c0a5.png)
 
 
 其实，这两种访问形式访问的都是同一张图片。
@@ -70,15 +77,19 @@ Go run main.go
 四、加载动态资源
 
 首先，在GinDemo-web下新建templete并在其中新增一个index.html文件，文件内容很简单，这里制作演示所以就没有去做接口互动。
+![image](https://user-images.githubusercontent.com/101968429/159396125-35955cc2-4e84-4f08-978d-3cd985c06c3a.png)
 
 
 然后，在根目录下创建了controller文件夹并创建con.go，主要用来存放逻辑层的操作，受JAVA开发的影响我这么去做了，你可以随意哈，怎么高兴怎么来。
 
+![image](https://user-images.githubusercontent.com/101968429/159396145-cdfabc18-e82d-4906-9156-a69304f87368.png)
 
 还是在main.go中做修改,并加载trmplete下面的资源，然后做了一个web分组，分组中仅有一个接口，其处理放到了con.go文件中的IndexController函数中。
+![image](https://user-images.githubusercontent.com/101968429/159396166-05efc486-359d-4fbf-8fe2-c4fbc6a0a222.png)
 
 
 直接运行，然后浏览器中访问index.html看看有什么效果？
+![image](https://user-images.githubusercontent.com/101968429/159396179-4917b31c-28de-4f01-b029-ea5f87cf400d.png)
 
 
 到这里，其实这个项目就算完成了，其中涉及到的知识点我们也都了解了，就这些内容已经完全够现阶段的我们使用了。
